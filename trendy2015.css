@@ -39,6 +39,7 @@
     visibility: visible !important;
     top: 0;
     left: 0;
+    width: 100%;
 }
     
 .reveal ul li ul li{
