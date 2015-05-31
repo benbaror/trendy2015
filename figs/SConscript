@@ -1,0 +1,14 @@
+import os
+env = Environment(ENV={'PATH': os.environ['PATH']})
+circ = env.Command('circ.svg', 'scripts/plot_cluster_pos.py', "python $SOURCE 0.0 $TARGET")
+ellip = env.Command('ellip.svg', 'scripts/plot_cluster_pos.py', "python $SOURCE 0.2 $TARGET")
+L1_L2 = env.Command('L1_L2.svg', 'scripts/plot_L1_L2.py', "python $SOURCE $TARGET")
+#esc_anim1 = env.Command('esc_movie_0.99_0.1.gif', 'scripts/esc_movie.py', "python $SOURCE $TARGET 0.99 0.1")
+esc_anim1 = env.Command('esc_movie_0.99_1.0.gif', 'scripts/esc_movie.py', "python $SOURCE $TARGET 0.99 1.0")
+esc_anim2 = env.Command('esc_movie_0.95_1.0.gif', 'scripts/esc_movie.py', "python $SOURCE $TARGET 0.95 1.0")
+esc_anim3 = env.Command('esc_movie_1.0_1.0.gif', 'scripts/esc_movie.py', "python $SOURCE $TARGET 1.0 1.0")
+esc_anim_lin1 = env.Command('esc_movie_lin_0.99_0.0.gif', 'scripts/esc_movie_lin.py', 
+              "python $SOURCE $TARGET --E_Ec 0.99 --Nt 250 --Ns 500 --tmax 0.5")
+esc_anim_lin2 = env.Command('esc_movie_lin_0.99_0.2.gif', 'scripts/esc_movie_lin.py', 
+              "python $SOURCE $TARGET --E_Ec 0.99 --Nt 250 --Ns 500 --ecc 0.2 --phi0 5.49 --tmax 0.5")
+
