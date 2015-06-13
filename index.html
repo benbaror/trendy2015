@@ -20,7 +20,7 @@
     }
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<meta name="description" content="Org-Reveal Introduction.">
+<script> Reveal.addEventListener( 'slidechanged', function( event ) { MathJax.Hub.Rerender(event.currentSlide);}); </script>
 </head>
 <body>
 <div class="reveal">
@@ -28,7 +28,6 @@
 <section id="sec-title-slide">
 <h2>The <font color = "yellow">elliptic</font> Hill’s problem and its application to <font color = "yellow">escape</font> from star clusters</h><h2><br></h2><h2>Ben Bar-Or <br><h3>Weizmann Institute of Science</h3></h2><h2><br></h2><h3>Collaborators: Douglas Heggie and Anna Lisa Varri <br> Edinburgh University</h3><br><font color = "yellow">Thanks to Pascale Garaud and ISIMA 2014</font>
 </section>
-
 <section>
 <section id="slide-orgheadline1">
 <h2 id="orgheadline1">Hill's Problem: Context</h2>
@@ -892,7 +891,7 @@ we have
 <li>The energy is an integral of motion (the Jacobi
 integral) \(E=\frac{1}{2}\dot{r}^{2}+\Phi_{eff}\)</li>
 <li>Lagrange points: Stationary orbits \(r_{t} =
-  -\Phi_{c}^{\prime}\left(r_{t}\right)/\left(\Phi_g^{\prime\prime}-\Omega^{2}\right)\)</li>
+  \Phi_{c}^{\prime}\left(r_{t}\right)/\left(\Omega^{2}-\Phi_g^{\prime\prime}\right)\)</li>
 <li>The critical energy
 \(E_{c}=E(r_t)=\frac{3}{2}\Phi_{c}\left(r_{t}\right)\left(1-
    \left.\frac{1}{3}\frac{d\log r\Phi_{c}(r)}{d\log r}
@@ -2021,44 +2020,47 @@ L72 43.2" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:
 </section>
 </section>
 <section>
-<section id="slide-orgheadline6">
-<h2 id="orgheadline6">Escaping from the cluster</h2>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">Escaping from the cluster</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-4">
 <ul>
 <li>Non escapers: \(E < E_{c}\)</li>
 
 </ul>
+<ul>
+<li data-fragment-index="1" class="fragment appear"><font color = "blue">Potential escapers:</font> \(E>E_{c}\)  but \(r(t) < r_{t}\) for
+all \(t\)</li>
+
+</ul>
+<ul>
+<li data-fragment-index="1" class="fragment appear"><font color = "red">Real escapers:</font> \(E>E_{c}\)  and
+\(r\left(\infty\right)>r_{t}\)</li>
+
+</ul>
+<ul>
+<li data-fragment-index="1" class="fragment appear"><font color = "green">Fake escapers:</font> \(E>E_{c}\)  and \(r(t) > r_{t}\)  for some \(t\)
+  but \(r(\infty) < r_{t}\)</li>
+
+</ul>
 </div> <div class="col-8">
+<div id="container">
+<div class="fragment fade-out" data-fragment-index="1">
 
 <div class="figure">
 <p><img src="./figs/esc_movie_1.0_1.0.gif" alt="esc_movie_1.0_1.0.gif" width="100%" />
 </p>
 </div>
-</div> </div> </div>
-</section>
-</section>
-<section>
-<section id="slide-orgheadline8">
-<h2 id="orgheadline8">Escaping from the cluster</h2>
-<div class="grid dspace"> <div class="row"> <div class="col-4">
-<ul>
-<li>Non escapers: \(E < E_{c}\)</li>
-<li><font color = "red">Real escapers:</font> \(E>E_{c}\)  and \(r\left(\infty\right)>r_{t}\)</li>
-<li><font color = "blue">Potential escapers:</font> \(E>E_{c}\)  but \(r(t) < r_{t}\) for all \(t\)</li>
-<li><font color = "green">Fake escapers:</font> \(E>E_{c}\)  and \(r(t) > r_{t}\)  for some \(t\)
-  but \(r(\infty) < r_{t}\)</li>
-
-</ul>
-</div> <div class="col-8">
+</div> <div class="fragment fade-in abs" data-fragment-index="1">
 
 <div class="figure">
-<p><img src="./figs/esc_movie_0.99_1.0.gif" alt="esc_movie_0.99_1.0.gif" width="100%" />
+<p><img src="./figs/esc_movie_0.99_1.0.gif" alt="esc_movie_0.99_1.0.gif" />
 </p>
 </div>
+</div> </div>
 </div> </div> </div>
 </section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7">Escaping from the cluster</h3>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Escaping from the cluster</h3>
 <div class="grid dspace"> <div class="row"> <div class="col-4">
 <ul>
 <li>Non escapers: \(E < E_{c}\)</li>
@@ -2075,17 +2077,19 @@ L72 43.2" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:
 </p>
 </div>
 </div> </div> </div>
+
 </section>
 </section>
 <section>
-<section id="slide-orgheadline9">
-<h2 id="orgheadline9">Escape rate</h2>
+<section id="slide-orgheadline8">
+<h2 id="orgheadline8">Escape rate</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-6">
 <ul>
 <li>Flux: The phase volume, per unit energy, across \(x=r_{t}\)
   (Fukushige Heggie 2000) \[\mathcal{F}\left(\epsilon\right)=\int_{\dot{x}>0}\delta\left(E-E\left(\mathbf{r},\dot{\mathbf{r}}\right)\right)\dot{x}d^{3}\dot{\mathbf{r}}dydz\]</li>
 <li>Volume: phase space volume per unit of energy \[\mathcal{V}\left(\epsilon\right)=\int\delta\left(E-E\left(\mathbf{r},\dot{\mathbf{r}}\right)\right)d^{3}\mathbf{r}d^{3}\dot{\mathbf{r}}\]</li>
 <li>Escape time \(t_e = \mathcal{V}/\mathcal{F}\)</li>
+<li>Life time (Baumgardt 2001): \(t_d = t_r^{3/4}t_e^{1/4}\)</li>
 
 </ul>
 </div> <div class="col-6">
@@ -3190,8 +3194,8 @@ L72 43.2" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:
 </section>
 </section>
 <section>
-<section id="slide-orgheadline10">
-<h2 id="orgheadline10">Circular case: Summary</h2>
+<section id="slide-orgheadline9">
+<h2 id="orgheadline9">Circular case: Summary</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-6">
 <ul>
 <li>Integral of motion: The Jacobi integral</li>
@@ -6200,8 +6204,8 @@ L72 43.2" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-linejoin:
 </section>
 </section>
 <section>
-<section id="slide-orgheadline11">
-<h2 id="orgheadline11">Cluster on <font color = "yellow">elliptic</font> orbit: Motivation</h2>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10">Cluster on <font color = "yellow">elliptic</font> orbit: Motivation</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-6">
 <ul>
 <li>Stars escape the cluster due to galactic tides</li>
@@ -7879,8 +7883,8 @@ Adopted from Baumgardt and Makino (2003)
 </section>
 </section>
 <section>
-<section id="slide-orgheadline12">
-<h2 id="orgheadline12">Cluster on elliptic orbit: <font color = "yellow">Challenges</font></h2>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">Cluster on elliptic orbit: <font color = "yellow">Challenges</font></h2>
 <div class="grid dspace"> <div class="row"> <div class="col-5">
 <ul>
 <li>No integral of motion</li>
@@ -8668,8 +8672,8 @@ Q8.5 -14.3125 8.40625 -14.3125" id="Cmmi10-79"/>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline14">
-<h2 id="orgheadline14">Cluster on an elliptic orbit</h2>
+<section id="slide-orgheadline13">
+<h2 id="orgheadline13">Cluster on an elliptic orbit</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-5">
 <ul>
 <li>Rotation: \(\boldsymbol{\Omega}=\left(\Omega(t),0,0\right)\)</li>
@@ -8679,16 +8683,11 @@ Q8.5 -14.3125 8.40625 -14.3125" id="Cmmi10-79"/>
 \(\ddot{\mathbf{x}}=\left\{\dots\right\}_{\mathrm{circ}} +
   \dot{\boldsymbol{\Omega}}\times\left(\mathbf{R}+\mathbf{r}\right) +
   \ddot{\mathbf{R}} + 2\boldsymbol{\Omega}\times\dot{\mathbf{R}}\)</li>
-<li>E.O.M in the rotating frame:</li>
-
-</ul>
-<p>
+<li>E.O.M in the rotating frame: 
 \(\ddot{\mathbf{r}}=\left\{\dots\right\}_{\mathrm{circ}} -
-\boldsymbol{\Omega}\times\dot{\mathbf{R}} -
-\dot{\boldsymbol{\Omega}}\times\left(\mathbf{R}+\mathbf{r}\right) - 
-\ddot{\mathbf{R}}\)
-</p>
-<ul>
+  \boldsymbol{\Omega}\times\dot{\mathbf{R}} -
+  \dot{\boldsymbol{\Omega}}\times\left(\mathbf{R}+\mathbf{r}\right) - 
+  \ddot{\mathbf{R}}\)</li>
 <li>Tidal approximation (\(r\ll R\)):
 \(\ddot{\mathbf{r}}=\left\{\dots\right\}_{\mathrm{circ}}+2\frac{\dot{R}}{R}\boldsymbol{\Omega}\times\mathbf{r}+\frac{\ddot{R}}{R}\left(\mathbf{r}-x\hat{R}\right)\)</li>
 
@@ -9470,8 +9469,8 @@ Q8.5 -14.3125 8.40625 -14.3125" id="Cmmi10-79"/>
 </svg>
 </div> </div> </div>
 </section>
-<section id="slide-orgheadline13">
-<h3 id="orgheadline13">Cluster on a <font color = "yellow">circular</font> orbit</h3>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Cluster on a <font color = "yellow">circular</font> orbit</h3>
 <div class="grid dspace"> <div class="row"> <div class="col-6">
 <ul>
 <li>Rotation: \(\boldsymbol{\Omega}=\left(\Omega,0,0\right)\)</li>
@@ -10265,8 +10264,8 @@ Q8.5 -14.3125 8.40625 -14.3125" id="Cmmi10-79"/>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline15">
-<h2 id="orgheadline15">Lagrange <del>points</del><ins>orbits</ins></h2>
+<section id="slide-orgheadline14">
+<h2 id="orgheadline14">Lagrange <del>points</del><ins>orbits</ins></h2>
 <ul>
 <li><p>
 Generalized tidal radius: Find a periodic orbits of the form
@@ -10286,8 +10285,8 @@ Generalized tidal radius: Find a periodic orbits of the form
 </section>
 </section>
 <section>
-<section id="slide-orgheadline16">
-<h2 id="orgheadline16">Point-masses case: <font color = "yellow">Regularization</font></h2>
+<section id="slide-orgheadline15">
+<h2 id="orgheadline15">Point-masses case: <font color = "yellow">Regularization</font></h2>
 <ul>
 <li>Consider the transformation \(\mathbf{\tilde{r}}=\mathbf{r}/r_t\),
 \(\tau=\int\Omega dt\)</li>
@@ -10309,8 +10308,8 @@ Generalized tidal radius: Find a periodic orbits of the form
 </section>
 </section>
 <section>
-<section id="slide-orgheadline17">
-<h2 id="orgheadline17">Linearization</h2>
+<section id="slide-orgheadline16">
+<h2 id="orgheadline16">Linearization</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-5">
 <ul>
 <li>Expansion near the Lagrange point \(q_1 = \tilde{x}-1\), \(q_2 = \tilde{y}\)</li>
@@ -10325,9 +10324,24 @@ Quadratic Hamiltonian
 
 </ul>
 </div> <div class="col-7">
-<p width="90%">
-<font color = "yellow">Circular</font>
-<img src="./figs/esc_movie_lin_0.99_0.0.gif" alt="esc_movie_lin_0.99_0.0.gif" width="90%" />
+<div id="container">
+<p>
+<font color = "yellow">Circular</font> case
+</p>
+<div class="fragment fade-out" data-fragment-index="1">
+
+<div class="figure">
+<p><img src="./figs/esc_movie_lin_0.99_0.0.png" alt="esc_movie_lin_0.99_0.0.png" width="90%" />
+</p>
+</div>
+</div> <div class="fragment fade-in abs" data-fragment-index="1"><br>
+
+<div class="figure">
+<p><img src="./figs/esc_movie_lin_0.99_0.0.gif" alt="esc_movie_lin_0.99_0.0.gif" width="90%" />
+</p>
+</div>
+</div> </div>
+<p>
 Eigenvalues: \(\sim\pm2.5, \pm2.07i\)
 </p>
 </div> </div> </div>
@@ -10335,8 +10349,8 @@ Eigenvalues: \(\sim\pm2.5, \pm2.07i\)
 </section>
 </section>
 <section>
-<section id="slide-orgheadline18">
-<h2 id="orgheadline18">Linearization</h2>
+<section id="slide-orgheadline17">
+<h2 id="orgheadline17">Linearization</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-5">
 <ul>
 <li>Expansion near the Lagrange point \(q_1 = \tilde{x}-1\), \(q_2 = \tilde{y}\)</li>
@@ -10345,22 +10359,35 @@ Quadratic Hamiltonian
 </p>
 \begin{eqnarray*}
 \tilde{H} &=& \frac{1}{2}(p_1^2+p_2^2) + p_1q_2 - p_2q_1 \\
-&& - \frac{1}{2(1-e\cos\phi)}(9q_1^2-3q_2^2)
+&& - \frac{1}{2(1+e\cos\phi)}(9q_1^2-3q_2^2)
 \end{eqnarray*}</li>
 <li>Stars can escape if \(\tilde{H} > 0\)</li>
 
 </ul>
 </div> <div class="col-7">
-<p width="90%">
+<div id="container">
+<p>
 <font color = "yellow">Elliptic</font> Case
-<img src="./figs/esc_movie_lin_0.99_0.2.gif" alt="esc_movie_lin_0.99_0.2.gif" width="90%" />
 </p>
+<div class="fragment fade-out" data-fragment-index="1">
+
+<div class="figure">
+<p><img src="./figs/esc_movie_lin_0.99_0.0.png" alt="esc_movie_lin_0.99_0.0.png" width="90%" />
+</p>
+</div>
+</div> <div class="fragment fade-in abs" data-fragment-index="1"><br>
+
+<div class="figure">
+<p><img src="./figs/esc_movie_lin_0.99_0.2.gif" alt="esc_movie_lin_0.99_0.2.gif" width="90%" />
+</p>
+</div>
+</div> </div>
 </div> </div> </div>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline19">
-<h2 id="orgheadline19">Escape rate: circular case</h2>
+<section id="slide-orgheadline18">
+<h2 id="orgheadline18">Escape rate: circular case</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-6">
 <ul>
 <li>Escape volume per unit of energy:
@@ -12014,8 +12041,8 @@ Q20.8438 6.5 28.4688 6.5" id="Roboto-Regular-63"/>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline20">
-<h2 id="orgheadline20"><font color = "yellow">Elliptic</font> case</h2>
+<section id="slide-orgheadline19">
+<h2 id="orgheadline19"><font color = "yellow">Elliptic</font> case</h2>
 <ul>
 <li>Hamiltonian (perturbations):
 \[
@@ -12041,8 +12068,8 @@ where \(JS_i + S_i^TJ = 0\)</li>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline21">
-<h2 id="orgheadline21">Elliptic case: <font color = "yellow">1<sup>st</sup></font> order in \(e\)</h2>
+<section id="slide-orgheadline20">
+<h2 id="orgheadline20">Elliptic case: <font color = "yellow">1<sup>st</sup></font> order in \(e\)</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-6">
 <ul>
 <li>Hamiltonian: \(\tilde{H}^\prime(e) = \tilde{H}_0\) (independent of \(e\))</li>
@@ -12053,7 +12080,7 @@ where \(JS_i + S_i^TJ = 0\)</li>
 </ul>
 </div> <div class="col-6">
 <div id="container">
-<div class="fragment fade-out" data-fragment-index="1">
+<div class="fragment fade-out abs" data-fragment-index="1">
 <svg height="425pt" version="1.1" viewBox="0 0 520 425" width="520pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -14019,7 +14046,7 @@ L113.647 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
   </clipPath>
  </defs>
 </svg>
-</div><div class="fragment current-visible abs" data-fragment-index="1"">
+</div><div class="fragment current-visible abs" data-fragment-index="1">
 <svg height="425pt" version="1.1" viewBox="0 0 520 425" width="520pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -16056,7 +16083,7 @@ L113.647 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
   </clipPath>
  </defs>
 </svg>
-</div><div class="fragment current-visible abs" data-fragment-index="2"">
+</div><div class="fragment current-visible abs" data-fragment-index="2">
 <svg height="425pt" version="1.1" viewBox="0 0 520 425" width="520pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -18113,7 +18140,7 @@ L113.647 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
   </clipPath>
  </defs>
 </svg>
-</div><div class="fragment abs" data-fragment-index="3"">
+</div><div class="fragment abs" data-fragment-index="3">
 <svg height="425pt" version="1.1" viewBox="0 0 520 425" width="520pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -20158,8 +20185,8 @@ L113.647 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
 </section>
 </section>
 <section>
-<section id="slide-orgheadline23">
-<h2 id="orgheadline23">Elliptic case: <font color = "yellow">2<sup>nd</sup></font> order in \(e\)</h2>
+<section id="slide-orgheadline22">
+<h2 id="orgheadline22">Elliptic case: <font color = "yellow">2<sup>nd</sup></font> order in \(e\)</h2>
 <div class="grid dspace"> <div class="row"> <div class="col-6">
 <ul>
 <li>Hamiltonian: \(\tilde{H}^\prime(e) = \tilde{H}_0 + e^2\tilde{H}_2\)
@@ -20168,8 +20195,8 @@ L113.647 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
 <li>Flux:
 \(\bar{\mathcal{F}} = N_0(2\pi)+e^2N_2(2\pi)\)</li>
 <li>Volume: \(\mathcal{V}\left(\epsilon\right)=\int\delta(E-H)d^{2n}W\)</li>
-<li>Escape time \(t_e(e) =  \bar{\mathcal{V}}/\bar{\mathcal{F}}\)</li>
-<li>Life time: \(t_d(e) \propto  t_d^{1/4}\)</li>
+<li>Escape time \(t_e(e) =  \mathcal{V}/\bar{\mathcal{F}}\)</li>
+<li>Life time: \(t_d \propto  t_e^{1/4}\)</li>
 
 </ul>
 </div> <div class="col-6"><div id="container">
@@ -20200,130 +20227,130 @@ L45.4938 372.92" style="fill:none;"/>
    </g>
    <g id="line2d_1">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 344.315
-L51.3028 330.654
-L54.8776 322.82
-L58.0055 316.49
-L61.1334 310.675
-L64.2614 305.346
-L67.3893 300.454
-L70.5172 295.939
-L74.092 291.172
-L77.6668 286.759
-L81.6884 282.154
-L85.71 277.873
-L90.1785 273.445
-L94.6469 269.321
-L99.5623 265.094
-L104.478 261.157
-L109.84 257.155
-L115.202 253.425
-L121.011 249.656
-L127.267 245.875
-L133.523 242.348
-L140.225 238.813
-L147.375 235.285
-L155.418 231.573
-L163.908 227.906
-L173.292 224.105
-L183.569 220.195
-L194.741 216.188
-L207.252 211.94
-L221.551 207.323
-L238.978 201.937
-L264.002 194.46
-L303.324 182.712
-L320.751 177.262
-L335.051 172.566
-L347.562 168.226
-L358.733 164.112
-L368.564 160.259
-L377.501 156.524
-L385.991 152.73
-L393.587 149.093
-L400.737 145.424
-L407.44 141.731
-L413.696 138.027
-L419.505 134.333
-L424.867 130.674
-L430.229 126.743
-L435.144 122.871
-L440.06 118.711
-L444.528 114.653
-L448.996 110.306
-L453.465 105.646
-L457.487 101.164
-L461.955 95.8497
-L466.424 90.1718
-L470.892 84.129
-L474.02 79.6977
-L479.382 71.735
-L485.191 62.733
-L486.532 60.4664
-L487.425 59.1907
-L488.319 57.7132
-L489.213 56.202
-L490.106 54.9636
-L491 53.2056
-L491.894 52.1831
-L491.894 52.1831" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
+M45.4938 347.564
+L51.3028 333.902
+L54.8776 326.068
+L58.0055 319.738
+L61.1334 313.923
+L64.2614 308.595
+L67.3893 303.702
+L70.5172 299.187
+L74.092 294.42
+L77.6668 290.008
+L81.6884 285.402
+L85.71 281.121
+L90.1785 276.693
+L94.6469 272.569
+L99.5623 268.343
+L104.478 264.406
+L109.84 260.404
+L115.202 256.674
+L121.011 252.905
+L127.267 249.124
+L133.523 245.596
+L140.225 242.062
+L147.375 238.533
+L155.418 234.821
+L163.908 231.154
+L173.292 227.354
+L183.569 223.443
+L194.741 219.437
+L207.252 215.189
+L221.551 210.571
+L238.978 205.185
+L264.002 197.709
+L303.324 185.96
+L320.751 180.511
+L335.051 175.815
+L347.562 171.474
+L358.733 167.361
+L368.564 163.507
+L377.501 159.773
+L385.991 155.978
+L393.587 152.342
+L400.737 148.673
+L407.44 144.98
+L413.696 141.276
+L419.505 137.582
+L424.867 133.922
+L430.229 129.991
+L435.144 126.119
+L440.06 121.96
+L444.528 117.902
+L448.996 113.555
+L453.465 108.894
+L457.487 104.412
+L461.955 99.0983
+L466.424 93.4204
+L470.892 87.3776
+L474.02 82.9463
+L479.382 74.9836
+L485.191 65.9816
+L486.532 63.715
+L487.425 62.4393
+L488.319 60.9618
+L489.213 59.4506
+L490.106 58.2122
+L491 56.4542
+L491.894 55.4317
+L491.894 55.4317" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
    </g>
    <g id="line2d_2">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 365.769
-L54.4307 354.393
-L59.7929 347.931
-L64.7082 342.37
-L69.1767 337.64
-L73.6451 333.212
-L78.5605 328.662
-L83.4758 324.404
-L88.8379 320.042
-L94.6469 315.592
-L101.35 310.744
-L108.499 305.849
-L116.542 300.623
-L125.033 295.382
-L133.969 290.132
-L143.353 284.887
-L153.184 279.656
-L163.461 274.448
-L174.186 269.266
-L185.804 263.907
-L198.315 258.387
-L212.168 252.526
-L228.254 245.972
-L247.915 238.215
-L317.624 210.946
-L332.816 204.635
-L346.222 198.828
-L358.287 193.357
-L369.011 188.259
-L379.288 183.13
-L388.672 178.209
-L397.609 173.283
-L406.546 168.098
-L415.036 162.912
-L423.526 157.451
-L431.569 152.011
-L439.613 146.304
-L448.103 139.99
-L458.827 131.594
-L463.296 127.985
-L476.254 117.162
-L480.723 113.329
-L481.616 112.592
-L482.51 111.755
-L486.978 108.002
-L487.425 107.709
-L487.872 107.1
-L489.213 106.099
-L489.66 105.497
-L490.106 105.317
-L491 104.483
-L491.447 104.028
-L491.894 103.857
-L491.894 103.857" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
+M45.4938 366.581
+L54.4307 355.205
+L59.7929 348.743
+L64.7082 343.182
+L69.1767 338.452
+L73.6451 334.024
+L78.5605 329.474
+L83.4758 325.216
+L88.8379 320.854
+L94.6469 316.404
+L101.35 311.556
+L108.499 306.661
+L116.542 301.436
+L125.033 296.194
+L133.969 290.945
+L143.353 285.699
+L153.184 280.468
+L163.461 275.26
+L174.186 270.078
+L185.804 264.719
+L198.315 259.199
+L212.168 253.338
+L228.254 246.784
+L247.915 239.028
+L317.624 211.758
+L332.816 205.447
+L346.222 199.64
+L358.287 194.169
+L369.011 189.071
+L379.288 183.943
+L388.672 179.021
+L397.609 174.095
+L406.546 168.91
+L415.036 163.724
+L423.526 158.263
+L431.569 152.823
+L439.613 147.116
+L448.103 140.802
+L458.827 132.407
+L463.296 128.797
+L476.254 117.975
+L480.723 114.141
+L481.616 113.404
+L482.51 112.567
+L486.978 108.814
+L487.425 108.521
+L487.872 107.912
+L489.213 106.911
+L489.66 106.309
+L490.106 106.13
+L491 105.296
+L491.447 104.84
+L491.894 104.669
+L491.894 104.669" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
    </g>
    <g id="line2d_3">
     <path clip-path="url(#p6e0bb329e8)" d="
@@ -21913,7 +21940,7 @@ L101.654 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
   </clipPath>
  </defs>
 </svg>
-</div><div class="fragment current-visible abs" data-fragment-index="1"">
+</div><div class="fragment current-visible abs" data-fragment-index="1">
 <svg height="425pt" version="1.1" viewBox="0 0 508 425" width="508pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -21940,147 +21967,147 @@ L45.4938 372.92" style="fill:none;"/>
    </g>
    <g id="line2d_1">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 344.315
-L49.9623 339.037
-L53.9839 334.611
-L58.0055 330.496
-L62.0271 326.681
-L66.0488 323.15
-L70.5172 319.53
-L74.9857 316.2
-L79.901 312.831
-L84.8163 309.73
-L90.1785 306.612
-L95.9875 303.498
-L102.243 300.402
-L108.946 297.331
-L116.542 294.103
-L125.033 290.75
-L134.416 287.292
-L145.141 283.587
-L157.652 279.513
-L172.398 274.954
-L192.06 269.126
-L254.171 250.89
-L269.811 245.97
-L283.216 241.523
-L294.834 237.44
-L305.112 233.605
-L314.496 229.879
-L323.433 226.089
-L331.476 222.439
-L339.072 218.745
-L346.222 215.011
-L352.924 211.246
-L359.18 207.465
-L364.989 203.687
-L370.351 199.94
-L375.714 195.911
-L380.629 191.937
-L385.544 187.666
-L390.013 183.495
-L394.481 179.027
-L398.95 174.236
-L403.418 169.101
-L407.887 163.608
-L412.355 157.75
-L416.824 151.536
-L421.739 144.321
-L427.548 135.371
-L436.038 121.809
-L445.869 106.194
-L451.231 98.062
-L456.146 90.9845
-L460.168 85.5019
-L463.742 80.8685
-L468.211 75.414
-L470.892 72.2878
-L472.233 70.819
-L473.126 69.7783
-L474.02 68.8809
-L475.36 67.3959
-L483.851 58.9441
-L484.297 58.7597
-L485.191 57.8438
-L486.085 57.1234
-L486.978 56.1459
-L487.872 55.5753
-L488.319 54.8915
-L489.213 54.3325
-L489.66 53.8417
-L490.553 53.1935
-L491 52.7206
-L491.447 52.6498
-L491.894 52.1831
-L491.894 52.1831" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
+M45.4938 347.564
+L49.9623 342.286
+L53.9839 337.86
+L58.0055 333.745
+L62.0271 329.93
+L66.0488 326.398
+L70.5172 322.779
+L74.9857 319.448
+L79.901 316.079
+L84.8163 312.979
+L90.1785 309.861
+L95.9875 306.746
+L102.243 303.65
+L108.946 300.58
+L116.542 297.351
+L125.033 293.999
+L134.416 290.541
+L145.141 286.836
+L157.652 282.762
+L172.398 278.202
+L192.06 272.374
+L254.171 254.138
+L269.811 249.219
+L283.216 244.772
+L294.834 240.689
+L305.112 236.853
+L314.496 233.127
+L323.433 229.338
+L331.476 225.688
+L339.072 221.993
+L346.222 218.26
+L352.924 214.495
+L359.18 210.713
+L364.989 206.936
+L370.351 203.189
+L375.714 199.159
+L380.629 195.186
+L385.544 190.914
+L390.013 186.744
+L394.481 182.276
+L398.95 177.484
+L403.418 172.35
+L407.887 166.856
+L412.355 160.998
+L416.824 154.784
+L421.739 147.569
+L427.548 138.619
+L436.038 125.057
+L445.869 109.442
+L451.231 101.311
+L456.146 94.2331
+L460.168 88.7505
+L463.742 84.1171
+L468.211 78.6626
+L470.892 75.5364
+L472.233 74.0676
+L473.126 73.0269
+L474.02 72.1295
+L475.36 70.6445
+L483.851 62.1927
+L484.297 62.0083
+L485.191 61.0924
+L486.085 60.372
+L486.978 59.3945
+L487.872 58.824
+L488.319 58.1401
+L489.213 57.5811
+L489.66 57.0903
+L490.553 56.4421
+L491 55.9692
+L491.447 55.8984
+L491.894 55.4317
+L491.894 55.4317" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
    </g>
    <g id="line2d_2">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 365.769
-L52.6433 359.515
-L58.8992 354.349
-L64.7082 349.844
-L70.5172 345.631
-L76.3262 341.7
-L82.1352 338.032
-L88.3911 334.349
-L95.0938 330.669
-L102.243 327.003
-L110.287 323.141
-L119.224 319.108
-L129.501 314.725
-L141.566 309.828
-L157.206 303.734
-L183.123 293.916
-L213.508 282.344
-L231.382 275.299
-L246.575 269.074
-L259.98 263.34
-L272.045 257.938
-L283.216 252.692
-L293.494 247.623
-L303.324 242.525
-L312.708 237.402
-L321.645 232.262
-L330.135 227.122
-L338.178 222.004
-L346.222 216.629
-L354.265 210.988
-L362.308 205.079
-L370.798 198.556
-L379.735 191.397
-L389.566 183.226
-L402.078 172.514
-L429.782 148.689
-L440.506 139.859
-L449.89 132.458
-L457.487 126.722
-L461.955 123.457
-L465.977 120.582
-L468.211 119
-L474.467 114.738
-L475.807 113.819
-L476.701 113.331
-L480.276 110.882
-L482.063 109.847
-L483.851 108.494
-L484.297 108.445
-L484.744 107.991
-L485.191 107.703
-L485.638 107.652
-L486.085 107.481
-L486.532 106.954
-L486.978 106.85
-L487.872 106.036
-L488.319 105.934
-L488.766 105.617
-L489.213 105.548
-L490.106 104.56
-L490.553 104.661
-L491 103.882
-L491.447 103.957
-L491.894 103.857
-L491.894 103.857" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
+M45.4938 366.581
+L52.6433 360.327
+L58.8992 355.161
+L64.7082 350.656
+L70.5172 346.443
+L76.3262 342.512
+L82.1352 338.845
+L88.3911 335.161
+L95.0938 331.481
+L102.243 327.815
+L110.287 323.953
+L119.224 319.92
+L129.501 315.537
+L141.566 310.64
+L157.206 304.547
+L183.123 294.728
+L213.508 283.156
+L231.382 276.111
+L246.575 269.886
+L259.98 264.152
+L272.045 258.75
+L283.216 253.504
+L293.494 248.435
+L303.324 243.337
+L312.708 238.214
+L321.645 233.074
+L330.135 227.934
+L338.178 222.816
+L346.222 217.441
+L354.265 211.8
+L362.308 205.891
+L370.798 199.368
+L379.735 192.209
+L389.566 184.038
+L402.078 173.326
+L429.782 149.501
+L440.506 140.671
+L449.89 133.271
+L457.487 127.534
+L461.955 124.269
+L465.977 121.395
+L468.211 119.812
+L474.467 115.55
+L475.807 114.631
+L476.701 114.143
+L480.276 111.694
+L482.063 110.659
+L483.851 109.306
+L484.297 109.257
+L484.744 108.803
+L485.191 108.515
+L485.638 108.464
+L486.085 108.293
+L486.532 107.766
+L486.978 107.662
+L487.872 106.848
+L488.319 106.746
+L488.766 106.429
+L489.213 106.36
+L490.106 105.372
+L490.553 105.473
+L491 104.695
+L491.447 104.77
+L491.894 104.669
+L491.894 104.669" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
    </g>
    <g id="line2d_3">
     <path clip-path="url(#p6e0bb329e8)" d="
@@ -23722,7 +23749,7 @@ L101.654 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
   </clipPath>
  </defs>
 </svg>
-</div><div class="fragment current-visible abs" data-fragment-index="2"">
+</div><div class="fragment current-visible abs" data-fragment-index="2">
 <svg height="425pt" version="1.1" viewBox="0 0 508 425" width="508pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -23749,193 +23776,193 @@ L45.4938 372.92" style="fill:none;"/>
    </g>
    <g id="line2d_1">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 344.315
-L84.8163 327.141
-L116.096 313.764
-L142.013 302.612
-L155.418 296.598
-L165.696 291.749
-L174.186 287.509
-L181.782 283.475
-L188.485 279.673
-L194.741 275.873
-L200.55 272.081
-L205.912 268.318
-L210.827 264.609
-L215.742 260.62
-L220.211 256.719
-L224.679 252.53
-L229.148 248.023
-L233.616 243.176
-L238.085 237.968
-L242.553 232.387
-L247.022 226.432
-L251.49 220.12
-L256.406 212.805
-L262.661 203.056
-L283.663 169.887
-L288.578 162.737
-L293.494 155.993
-L297.962 150.241
-L302.431 144.853
-L306.899 139.82
-L311.368 135.126
-L315.836 130.747
-L320.305 126.66
-L325.22 122.472
-L330.135 118.574
-L335.497 114.618
-L340.86 110.936
-L346.669 107.22
-L352.478 103.755
-L358.287 100.506
-L365.883 96.548
-L372.586 93.286
-L379.735 90.0082
-L390.46 85.4499
-L395.822 83.2811
-L410.568 77.7072
-L412.355 77.0499
-L425.314 72.5466
-L427.548 71.8215
-L428.442 71.5267
-L430.676 70.8081
-L431.569 70.4403
-L441.847 67.1516
-L443.187 66.7469
-L445.422 66.0244
-L446.762 65.5949
-L451.678 64.0479
-L452.124 64.0054
-L452.571 63.7311
-L453.465 63.4416
-L455.252 62.9307
-L455.699 62.8818
-L456.146 62.6574
-L457.487 62.2958
-L460.168 61.43
-L460.615 61.2653
-L461.061 61.3325
-L461.955 60.944
-L463.742 60.2633
-L464.189 60.3516
-L465.53 59.754
-L467.317 59.329
-L468.211 59.0894
-L468.658 58.7641
-L469.105 58.8305
-L469.551 58.5345
-L469.998 58.6426
-L470.445 58.2392
-L470.892 58.297
-L475.807 56.8418
-L476.254 56.533
-L476.701 56.5593
-L478.488 56.0501
-L478.935 55.6931
-L479.382 55.8281
-L480.276 55.3293
-L480.723 55.5266
-L481.169 55.0629
-L481.616 55.1928
-L482.063 54.9825
-L482.51 54.5541
-L483.404 54.5929
-L483.851 54.5015
-L484.297 54.1103
-L484.744 54.0825
-L485.191 54.2793
-L485.638 53.7884
-L486.978 53.6689
-L487.425 53.2152
-L487.872 53.0794
-L488.319 53.1079
-L488.766 52.8786
-L489.213 52.9025
-L490.106 52.5017
-L490.553 52.5179
-L491 52.257
-L491.447 52.4536
-L491.894 52.1831
-L491.894 52.1831" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
+M45.4938 347.564
+L84.8163 330.39
+L116.096 317.013
+L142.013 305.86
+L155.418 299.847
+L165.696 294.997
+L174.186 290.758
+L181.782 286.723
+L188.485 282.922
+L194.741 279.121
+L200.55 275.33
+L205.912 271.566
+L210.827 267.858
+L215.742 263.869
+L220.211 259.968
+L224.679 255.778
+L229.148 251.272
+L233.616 246.425
+L238.085 241.217
+L242.553 235.636
+L247.022 229.681
+L251.49 223.368
+L256.406 216.053
+L262.661 206.305
+L283.663 173.136
+L288.578 165.985
+L293.494 159.242
+L297.962 153.489
+L302.431 148.101
+L306.899 143.069
+L311.368 138.374
+L315.836 133.996
+L320.305 129.909
+L325.22 125.72
+L330.135 121.822
+L335.497 117.867
+L340.86 114.185
+L346.669 110.469
+L352.478 107.003
+L358.287 103.755
+L365.883 99.7966
+L372.586 96.5346
+L379.735 93.2568
+L390.46 88.6985
+L395.822 86.5297
+L410.568 80.9558
+L412.355 80.2985
+L425.314 75.7952
+L427.548 75.0701
+L428.442 74.7753
+L430.676 74.0567
+L431.569 73.6889
+L441.847 70.4002
+L443.187 69.9955
+L445.422 69.273
+L446.762 68.8435
+L451.678 67.2965
+L452.124 67.254
+L452.571 66.9797
+L453.465 66.6902
+L455.252 66.1793
+L455.699 66.1304
+L456.146 65.906
+L457.487 65.5444
+L460.168 64.6786
+L460.615 64.5139
+L461.061 64.5811
+L461.955 64.1926
+L463.742 63.5119
+L464.189 63.6002
+L465.53 63.0026
+L467.317 62.5776
+L468.211 62.338
+L468.658 62.0127
+L469.105 62.0791
+L469.551 61.7831
+L469.998 61.8912
+L470.445 61.4879
+L470.892 61.5456
+L475.807 60.0904
+L476.254 59.7816
+L476.701 59.8079
+L478.488 59.2987
+L478.935 58.9417
+L479.382 59.0767
+L480.276 58.5779
+L480.723 58.7752
+L481.169 58.3115
+L481.616 58.4414
+L482.063 58.2311
+L482.51 57.8027
+L483.404 57.8415
+L483.851 57.7501
+L484.297 57.3589
+L484.744 57.3311
+L485.191 57.5279
+L485.638 57.037
+L486.978 56.9175
+L487.425 56.4638
+L487.872 56.328
+L488.319 56.3565
+L488.766 56.1272
+L489.213 56.1511
+L490.106 55.7503
+L490.553 55.7665
+L491 55.5056
+L491.447 55.7022
+L491.894 55.4317
+L491.894 55.4317" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
    </g>
    <g id="line2d_2">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 365.769
-L66.9424 353.589
-L79.4542 346.749
-L91.0722 340.649
-L103.137 334.566
-L117.436 327.615
-L155.418 309.301
-L166.142 303.794
-L175.526 298.728
-L184.016 293.899
-L192.06 289.079
-L200.103 283.997
-L207.699 278.941
-L215.296 273.63
-L223.339 267.727
-L231.382 261.548
-L239.872 254.752
-L249.703 246.585
-L262.215 235.87
-L289.919 212.033
-L299.75 203.921
-L308.687 196.828
-L317.177 190.375
-L325.22 184.534
-L333.263 178.963
-L341.306 173.656
-L349.796 168.329
-L358.287 163.267
-L367.224 158.204
-L376.16 153.387
-L386.885 147.899
-L396.715 143.113
-L409.674 137.11
-L425.76 130.05
-L427.995 129.111
-L435.591 125.929
-L457.487 117.063
-L459.721 116.202
-L461.061 115.614
-L463.742 114.621
-L465.083 113.976
-L465.53 113.929
-L466.87 113.276
-L467.317 113.226
-L468.658 112.688
-L471.786 111.442
-L472.679 111.098
-L473.126 110.877
-L473.573 110.857
-L476.701 109.385
-L477.595 109.354
-L478.488 108.775
-L478.935 108.807
-L479.829 108.342
-L480.276 108.067
-L480.723 108.077
-L481.169 107.729
-L482.063 107.513
-L482.51 107.123
-L482.957 107.214
-L483.851 106.765
-L484.297 106.432
-L484.744 106.448
-L486.532 105.902
-L486.978 105.56
-L487.425 105.545
-L487.872 105.317
-L488.319 104.933
-L488.766 104.971
-L489.66 104.432
-L490.106 104.534
-L491 104.01
-L491.447 104.185
-L491.894 103.857
-L491.894 103.857" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
+M45.4938 366.581
+L66.9424 354.401
+L79.4542 347.561
+L91.0722 341.461
+L103.137 335.378
+L117.436 328.427
+L155.418 310.113
+L166.142 304.606
+L175.526 299.54
+L184.016 294.711
+L192.06 289.891
+L200.103 284.809
+L207.699 279.753
+L215.296 274.442
+L223.339 268.539
+L231.382 262.361
+L239.872 255.564
+L249.703 247.397
+L262.215 236.682
+L289.919 212.846
+L299.75 204.733
+L308.687 197.64
+L317.177 191.187
+L325.22 185.346
+L333.263 179.775
+L341.306 174.468
+L349.796 169.141
+L358.287 164.08
+L367.224 159.016
+L376.16 154.199
+L386.885 148.711
+L396.715 143.925
+L409.674 137.922
+L425.76 130.862
+L427.995 129.923
+L435.591 126.741
+L457.487 117.875
+L459.721 117.014
+L461.061 116.426
+L463.742 115.434
+L465.083 114.789
+L465.53 114.741
+L466.87 114.088
+L467.317 114.039
+L468.658 113.5
+L471.786 112.254
+L472.679 111.911
+L473.126 111.69
+L473.573 111.669
+L476.701 110.197
+L477.595 110.166
+L478.488 109.587
+L478.935 109.619
+L479.829 109.155
+L480.276 108.879
+L480.723 108.89
+L481.169 108.541
+L482.063 108.325
+L482.51 107.935
+L482.957 108.026
+L483.851 107.577
+L484.297 107.244
+L484.744 107.261
+L486.532 106.714
+L486.978 106.372
+L487.425 106.357
+L487.872 106.129
+L488.319 105.745
+L488.766 105.783
+L489.66 105.245
+L490.106 105.346
+L491 104.822
+L491.447 104.997
+L491.894 104.669
+L491.894 104.669" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
    </g>
    <g id="line2d_3">
     <path clip-path="url(#p6e0bb329e8)" d="
@@ -25542,7 +25569,7 @@ L101.654 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
   </clipPath>
  </defs>
 </svg>
-</div><div class="fragment abs" data-fragment-index="3"">
+</div><div class="fragment abs" data-fragment-index="3">
 <svg height="425pt" version="1.1" viewBox="0 0 508 425" width="508pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -25569,136 +25596,136 @@ L45.4938 372.92" style="fill:none;"/>
    </g>
    <g id="line2d_1">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 344.315
-L49.9623 338.682
-L54.8776 332.137
-L61.1334 323.427
-L72.3046 307.414
-L86.1569 287.251
-L93.7533 275.786
-L102.69 261.841
-L113.415 245.133
-L119.224 236.51
-L124.139 229.602
-L128.607 223.681
-L133.076 218.117
-L137.544 212.912
-L142.013 208.053
-L146.481 203.52
-L150.95 199.292
-L155.865 194.961
-L160.78 190.936
-L165.696 187.185
-L171.058 183.371
-L176.867 179.53
-L182.676 175.954
-L188.932 172.362
-L195.634 168.773
-L202.784 165.199
-L210.38 161.648
-L218.87 157.935
-L227.807 154.272
-L237.638 150.484
-L248.362 146.588
-L260.427 142.442
-L274.279 137.92
-L290.813 132.764
-L313.155 126.049
-L363.202 111.088
-L379.288 106.019
-L392.247 101.74
-L404.312 97.5412
-L415.036 93.5875
-L425.76 89.374
-L431.569 86.9571
-L438.272 84.0408
-L451.678 77.6796
-L461.955 72.2457
-L463.296 71.446
-L467.764 68.9004
-L469.105 68.0173
-L469.551 67.8283
-L470.892 66.9236
-L472.233 66.1486
-L473.573 65.2569
-L474.914 64.4409
-L476.254 63.5582
-L476.701 63.3354
-L477.148 62.8709
-L478.935 61.7012
-L481.616 59.7819
-L482.063 59.6526
-L482.51 59.1712
-L482.957 58.9592
-L483.404 58.454
-L483.851 58.3819
-L484.297 57.8593
-L485.638 56.8987
-L486.085 56.4448
-L486.532 56.485
-L486.978 55.7882
-L487.872 55.3422
-L488.766 54.4477
-L489.213 54.3131
-L489.66 53.7758
-L490.106 53.5136
-L491 52.7349
-L491.447 52.4723
-L491.894 51.9936
-L491.894 51.9936" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
+M45.4938 347.564
+L49.9623 341.931
+L54.8776 335.385
+L61.1334 326.675
+L72.3046 310.663
+L86.1569 290.5
+L93.7533 279.035
+L102.69 265.09
+L113.415 248.382
+L119.224 239.758
+L124.139 232.851
+L128.607 226.929
+L133.076 221.366
+L137.544 216.16
+L142.013 211.301
+L146.481 206.769
+L150.95 202.54
+L155.865 198.21
+L160.78 194.185
+L165.696 190.434
+L171.058 186.62
+L176.867 182.779
+L182.676 179.203
+L188.932 175.611
+L195.634 172.021
+L202.784 168.447
+L210.38 164.896
+L218.87 161.184
+L227.807 157.52
+L237.638 153.733
+L248.362 149.837
+L260.427 145.69
+L274.279 141.168
+L290.813 136.012
+L313.155 129.297
+L363.202 114.336
+L379.288 109.267
+L392.247 104.988
+L404.312 100.79
+L415.036 96.8361
+L425.76 92.6226
+L431.569 90.2057
+L438.272 87.2894
+L451.678 80.9282
+L461.955 75.4943
+L463.296 74.6946
+L467.764 72.149
+L469.105 71.2659
+L469.551 71.0769
+L470.892 70.1722
+L472.233 69.3972
+L473.573 68.5055
+L474.914 67.6895
+L476.254 66.8068
+L476.701 66.584
+L477.148 66.1195
+L478.935 64.9498
+L481.616 63.0305
+L482.063 62.9012
+L482.51 62.4198
+L482.957 62.2078
+L483.404 61.7026
+L483.851 61.6305
+L484.297 61.1079
+L485.638 60.1473
+L486.085 59.6934
+L486.532 59.7336
+L486.978 59.0368
+L487.872 58.5908
+L488.766 57.6963
+L489.213 57.5617
+L489.66 57.0244
+L490.106 56.7622
+L491 55.9835
+L491.447 55.7209
+L491.894 55.2422
+L491.894 55.2422" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:4.4;"/>
    </g>
    <g id="line2d_2">
     <path clip-path="url(#p6e0bb329e8)" d="
-M45.4938 365.769
-L53.9839 358.001
-L75.4325 338.23
-L84.3695 330.389
-L94.6469 321.685
-L137.097 286.091
-L152.737 272.95
-L163.015 264.606
-L171.951 257.636
-L180.442 251.299
-L188.485 245.568
-L196.528 240.104
-L204.571 234.901
-L213.061 229.677
-L221.551 224.711
-L230.488 219.741
-L239.872 214.778
-L249.703 209.829
-L260.427 204.685
-L272.045 199.371
-L284.557 193.898
-L298.409 188.083
-L314.942 181.394
-L335.944 173.155
-L394.481 150.34
-L411.461 143.386
-L426.654 136.885
-L441.4 130.239
-L448.55 126.872
-L455.699 123.395
-L464.189 119.113
-L482.063 109.595
-L482.957 108.895
-L483.404 108.735
-L483.851 108.324
-L484.297 108.079
-L484.744 108.016
-L485.191 107.79
-L485.638 107.384
-L486.085 107.169
-L487.425 106.231
-L487.872 106.06
-L488.766 105.466
-L489.213 105.449
-L489.66 104.921
-L490.106 104.577
-L490.553 104.671
-L491.447 103.793
-L491.894 103.687
-L491.894 103.687" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
+M45.4938 366.581
+L53.9839 358.813
+L75.4325 339.042
+L84.3695 331.201
+L94.6469 322.497
+L137.097 286.904
+L152.737 273.762
+L163.015 265.418
+L171.951 258.448
+L180.442 252.112
+L188.485 246.381
+L196.528 240.916
+L204.571 235.713
+L213.061 230.489
+L221.551 225.524
+L230.488 220.553
+L239.872 215.59
+L249.703 210.641
+L260.427 205.497
+L272.045 200.183
+L284.557 194.71
+L298.409 188.895
+L314.942 182.206
+L335.944 173.968
+L394.481 151.153
+L411.461 144.198
+L426.654 137.698
+L441.4 131.051
+L448.55 127.685
+L455.699 124.207
+L464.189 119.925
+L482.063 110.407
+L482.957 109.708
+L483.404 109.547
+L483.851 109.137
+L484.297 108.891
+L484.744 108.828
+L485.191 108.602
+L485.638 108.196
+L486.085 107.981
+L487.425 107.044
+L487.872 106.872
+L488.766 106.279
+L489.213 106.261
+L489.66 105.733
+L490.106 105.39
+L490.553 105.483
+L491.447 104.605
+L491.894 104.5
+L491.894 104.5" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-width:3.2;"/>
    </g>
    <g id="line2d_3">
     <path clip-path="url(#p6e0bb329e8)" d="
@@ -27363,8 +27390,8 @@ L101.654 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
 </svg>
 </div> </div> </div> </div></div>
 </section>
-<section id="slide-orgheadline22">
-<h3 id="orgheadline22">Elliptic case: <font color = "yellow">2<sup>nd</sup></font> order in \(e\)</h3>
+<section id="slide-orgheadline21">
+<h3 id="orgheadline21">Elliptic case: <font color = "yellow">2<sup>nd</sup></font> order in \(e\)</h3>
 <ul>
 <li>Hamiltonian: \(\tilde{H}^\prime(e) = \tilde{H}_0 + e^2\tilde{H}_2\)
   (depends on \(e\))</li>
@@ -27372,7 +27399,7 @@ L101.654 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
 <li>Flux:
 \(\bar{\mathcal{F}}(e) \approx \bar{\mathcal{F}}(0)(1 + 0.96e^2)\)</li>
 <li>Volume:
-\(\bar{\mathcal{V}}(e) \approx \bar{\mathcal{V}}(0)(1 - (1.55n-1.9)e^2)\)</li>
+\(\mathcal{V}(e) \approx \bar{\mathcal{V}}(0)(1 - (1.55n-1.9)e^2)\)</li>
 <li>Escape time \(t_e(e) \approx t_{e}(0)[1-(1.55n-0.94)e^2]\)</li>
 <li>Life time: \(t_d(e) \approx  t_d(0)(1-(0.38n-0.24)e^2)\)</li>
 
@@ -27381,8 +27408,8 @@ L101.654 118.934" style="fill:none;stroke:#ffffff;stroke-linecap:square;stroke-w
 </section>
 </section>
 <section>
-<section id="slide-orgheadline24">
-<h2 id="orgheadline24">Elliptic case: 2<sup>nd</sup> order in \(e\)</h2>
+<section id="slide-orgheadline23">
+<h2 id="orgheadline23">Elliptic case: 2<sup>nd</sup> order in \(e\)</h2>
 <div class="grid dspace"> <div class="row"><div class="col-11"><div id="container">
 <div class="fragment fade-out abs" data-fragment-index="1">
 <svg height="308pt" version="1.1" viewBox="0 0 481 308" width="481pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -29709,7 +29736,7 @@ z
   </clipPath>
  </defs>
 </svg>
-</div><div class="fragment abs" data-fragment-index="1"">
+</div><div class="fragment abs" data-fragment-index="1">
 <svg height="308pt" version="1.1" viewBox="0 0 481 308" width="481pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
@@ -32097,8 +32124,8 @@ z
 </section>
 </section>
 <section>
-<section id="slide-orgheadline25">
-<h2 id="orgheadline25">Summary</h2>
+<section id="slide-orgheadline24">
+<h2 id="orgheadline24">Summary</h2>
 <ul>
 <li>To first order in \(e\) the an elliptic orbit can be mapped to a
 circular one.</li>
@@ -32111,7 +32138,7 @@ with \(N\)-body.</li>
 </ul>
 <h3>
 <p>
-Caveats and future work 
+Future work 
 </p>
 </h3>
 <ul>
